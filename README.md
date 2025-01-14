@@ -1,2 +1,3 @@
-# odoo-modules
-Custom modules for Odoo
+# Booking Room
+
+Custom module for booking rooms internally.
