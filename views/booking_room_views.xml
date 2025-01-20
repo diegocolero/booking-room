@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="boking_room_action" model="ir.actions.act_window">
+            <field name="name">Reserva de espacios</field>
+            <field name="res_model">booking.room</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="booking_room_view_tree" model="ir.ui.view">
+        <field name="name">booking.room.tree</field>
+        <field name="model">booking.room</field>
+        <field name="arch" type="xml">
+            <tree string="Reserva">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    </data>
+</odoo>

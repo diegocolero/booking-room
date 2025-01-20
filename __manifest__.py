@@ -10,5 +10,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/booking_room_views.xml',
+        'views/booking_room_menus.xml'
     ]
 }
