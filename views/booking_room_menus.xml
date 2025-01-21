@@ -8,9 +8,16 @@
             />
         <menuitem
             id="menu_booking_room_main"
-            name="Reserva de espacios"
+            name="Reserva"
             parent="menu_booking_room_root"
             action="boking_room_action"
+            groups="base.group_user"
+            sequence="0"/>
+        <menuitem
+            id="menu_room_main"
+            name="Aulas"
+            parent="menu_booking_room_root"
+            action="room_action"
             groups="base.group_user"
             sequence="0"/>
     </data>
