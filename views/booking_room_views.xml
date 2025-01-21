@@ -4,17 +4,52 @@
         <record id="boking_room_action" model="ir.actions.act_window">
             <field name="name">Reserva de espacios</field>
             <field name="res_model">booking.room</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">calendar,tree,form</field>
         </record>
 
         <record id="booking_room_view_tree" model="ir.ui.view">
-        <field name="name">booking.room.tree</field>
-        <field name="model">booking.room</field>
-        <field name="arch" type="xml">
-            <tree string="Reserva">
-                <field name="name"/>
-            </tree>
-        </field>
-    </record>
+            <field name="name">booking.room.tree</field>
+            <field name="model">booking.room</field>
+            <field name="arch" type="xml">
+                <tree string="Reserva">
+                    <field name="date_start"/>
+                    <field name="date_stop"/>
+                    <field name="room"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="booking_room_view_form" model="ir.ui.view">
+            <field name="name">booking.room.form</field>
+            <field name="model">booking.room</field>
+            <field name="arch" type="xml">
+                <form string="Reserva">
+                    <group>
+                        <field name="name" invisible="1"/>
+                        <field name="date_start"/>
+                        <field name="date_stop"/>
+                        <field name="room"/>
+                        <field name="partner_id" invisible="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="booking_room_view_calendar" model="ir.ui.view">
+            <field name="name">booking.room.calendar</field>
+            <field name="model">booking.room</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date_start" date_stop="date_stop" string="Reserva de espacios"
+                          quick_create="False"
+                          quick_create_view_id="booking_room_view_form"
+                          event_open_popup="True">
+                    <field name="name" invisible="1"/>
+                    <field name="date_start"/>
+                    <field name="date_stop"/>
+                    <field name="room"/>
+                    <field name="partner_id"/>
+                </calendar>
+            </field>
+        </record>
     </data>
 </odoo>
