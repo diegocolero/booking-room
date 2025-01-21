@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="booking_room_rule_my" model="ir.rule">
+            <field name="name">Reservas propias</field>
+            <field ref="model_booking_room" name="model_id"/>
+            <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="booking_room_rule_employee" model="ir.rule">
+            <field ref="model_booking_room" name="model_id"/>
+            <field name="name">Todas las reservas</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field eval="[(4,ref('base.group_user'))]" name="groups"/>
+        </record>
+
+    </data>
+</odoo>
