@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="room_action" model="ir.actions.act_window">
+            <field name="name">Aulas</field>
+            <field name="res_model">room</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="room_view_tree" model="ir.ui.view">
+            <field name="name">room.tree</field>
+            <field name="model">room</field>
+            <field name="arch" type="xml">
+                <tree string="Aula">
+                    <field name="name"/>
+                    <field name="floor"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
